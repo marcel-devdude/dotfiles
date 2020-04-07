@@ -1,0 +1,66 @@
+# /Users/marcelmeyer/.config/tmuxinator/heev.yml
+
+name: heev
+root: ~/Develop/heev
+
+# Optional tmux socket
+# socket_name: foo
+
+# Note that the pre and post options have been deprecated and will be replaced by
+# project hooks.
+
+# Project hooks
+# Runs on project start, always
+# on_project_start: command
+# Run on project start, the first time
+# on_project_first_start: command
+# Run on project start, after the first time
+# on_project_restart: command
+# Run on project exit ( detaching from tmux session )
+# on_project_exit: command
+# Run on project stop
+# on_project_stop: command
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: editor
+
+# Specifies (by index) which pane of the specified window will be selected on project startup. If not set, the first pane is used.
+# startup_pane: 1
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+windows:
+  - api:
+      layout: 3498,236x58,0,0{118x58,0,0,0,117x58,119,0[117x11,119,0,2,117x22,119,12,3,117x23,119,35,6]}
+      root: ~/Develop/heev/serverless-graphql-api
+      panes:
+        - clear
+        - clear && docker-compose up
+        - cd ../serverless-pdf-generator && clear
+        - cd ../serverless-preview-service && clear
+  - app:
+      layout:  4922,362x79,0,0{181x79,0,0,0,180x79,182,0[180x39,182,0,1,180x39,182,40,2]}
+      root: ~/Develop/heev/app
+      panes:
+        - clear
+        - clear
+        - clear
+  - vim-api:
+      root: ~/Develop/heev/serverless-graphql-api
+      panes:
+        - nvim
+  - vim-app:
+      root: ~/Develop/heev/app
+      panes:
+        - nvim
+

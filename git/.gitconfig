@@ -1,0 +1,15 @@
+[user]
+	name = Marcel Meyer
+	email = marcel@devdu.de
+[color]
+	ui = true
+[alias]
+	co = checkout
+	b = branch
+	ci = commit
+	st = status
+	cam = commit --amend
+	puf = push --force
+[core]
+	editor = nvim
+	excludesfile = /Users/marcelmeyer/dotfiles/git/.gitignore

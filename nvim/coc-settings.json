@@ -1,0 +1,17 @@
+{
+  "suggest.noselect": false,
+  "eslint.autoFixOnSave": true,
+  "diagnostic.errorSign": "✗",
+  "diagnostic.signOffset": 9999999,
+  "typescript.updateImportsOnFileMove.enable": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "javascriptreact",
+    "typescript.tsx",
+    "graphql"
+  ]
+}
+

@@ -1,0 +1,9 @@
+[submodule "zsh/plugins/dracula-theme"]
+	path = zsh/plugins/dracula-theme
+	url = https://github.com/dracula/zsh.git
+[submodule "zsh/plugins/zsh-syntax-highlighting"]
+	path = zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "tmux/tpm"]
+	path = tmux/tpm
+	url = https://github.com/tmux-plugins/tpm
