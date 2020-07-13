@@ -108,7 +108,6 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias zshconfig="nvim ~/.zshrc"
-alias dots='git --git-dir=$HOME/dotfiles/'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -141,6 +140,9 @@ alias cm='git commit'
 alias nvim='nvm use 12.13.1 && nvim'
 alias r='ranger'
 alias lg='lazygit'
+
+# Some useful stuff
+alias secret="node ~/dotfiles/tools/secret.js"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"

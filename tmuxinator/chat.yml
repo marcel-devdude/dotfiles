@@ -1,7 +1,7 @@
 # /Users/marcelmeyer/.config/tmuxinator/witt.yml
 
-name: witt-shop
-root: ~/Develop/witt/shop
+name: chat
+root: ~/Develop/devdude/chat
 
 # Optional tmux socket
 # socket_name: foo
@@ -40,12 +40,36 @@ root: ~/Develop/witt/shop
 # attach: false
 
 windows:
-  - process:
+  - api:
+      root: ~/Develop/devdude/chat/chat-api
       layout:  4922,362x79,0,0{181x79,0,0,0,180x79,182,0[180x39,182,0,1,180x39,182,40,2]}
       panes:
-        - nvm use 12.16 && clear
-        - nvm use 12.16 && clear
-        - nvm use 12.16 && clear
-  - nvim:
-     panes:
+        - clear
+        - clear
+        - clear
+  - app:
+      root: ~/Develop/devdude/chat/chat-app
+      layout:  4922,362x79,0,0{181x79,0,0,0,180x79,182,0[180x39,182,0,1,180x39,182,40,2]}
+      panes:
+        - clear
+        - clear
+        - clear
+  - vim-api:
+      root: ~/Develop/devdude/chat/chat-api
+      panes:
+       - nvim
+  - vim-app:
+      root: ~/Develop/devdude/chat/chat-app
+      panes:
+       - nvim
+  - clients:
+      root: ~/Develop/devdude/chat/clients
+      layout:  4922,362x79,0,0{181x79,0,0,0,180x79,182,0[180x39,182,0,1,180x39,182,40,2]}
+      panes:
+        - clear
+        - clear
+        - clear
+  - vim-clients:
+      root: ~/Develop/devdude/chat/clients
+      panes:
        - nvim

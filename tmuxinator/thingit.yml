@@ -1,7 +1,7 @@
-# /Users/marcelmeyer/.config/tmuxinator/witt.yml
+# /Users/marcelmeyer/.config/tmuxinator/heev.yml
 
-name: witt-shop
-root: ~/Develop/witt/shop
+name: thingit
+root: ~/Develop/thingit
 
 # Optional tmux socket
 # socket_name: foo
@@ -40,12 +40,25 @@ root: ~/Develop/witt/shop
 # attach: false
 
 windows:
-  - process:
+  - ui-components:
       layout:  4922,362x79,0,0{181x79,0,0,0,180x79,182,0[180x39,182,0,1,180x39,182,40,2]}
+      root: ~/Develop/thingit/thing-it-ui-components
       panes:
-        - nvm use 12.16 && clear
-        - nvm use 12.16 && clear
-        - nvm use 12.16 && clear
-  - nvim:
-     panes:
-       - nvim
+        - clear
+        - clear
+        - clear
+  - nvim-ui-components:
+      root: ~/Develop/thingit/thing-it-ui-components
+      panes:
+        - nvim
+  - tim:
+      layout:  4922,362x79,0,0{181x79,0,0,0,180x79,182,0[180x39,182,0,1,180x39,182,40,2]}
+      root: ~/Develop/thingit/thing-it-mobile-2
+      panes:
+        - clear
+        - clear
+        - clear
+  - nvim-tim:
+      root: ~/Develop/thingit/thing-it-mobile-2
+      panes:
+        - nvim
