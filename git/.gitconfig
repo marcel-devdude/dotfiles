@@ -13,3 +13,5 @@
 [core]
 	editor = nvim
 	excludesfile = /Users/marcelmeyer/dotfiles/git/.gitignore
+[pull]
+	rebase = false
