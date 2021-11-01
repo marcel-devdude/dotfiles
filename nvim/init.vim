@@ -24,6 +24,8 @@ Plug 'junegunn/limelight.vim'
 Plug 'Asheq/close-buffers.vim'
 Plug 'tpope/vim-surround'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'sheerun/vim-polyglot'
+Plug 'pantharshit00/vim-prisma'
 
 " Color themes
 Plug 'gruvbox-community/gruvbox'
@@ -244,7 +246,6 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-json',
   \ 'coc-stylelint',
-  \ 'coc-svelte',
   \ 'coc-css',
-  \ 'coc-angular',
+  \ 'coc-prisma',
   \ ]

@@ -121,6 +121,13 @@ alias yr='yarn run'
 alias yui='yarn upgrade-interactive'
 alias ya='yarn add'
 
+# PNPM aliases
+alias pnpm='/Users/marcelmeyer/.nvm/versions/node/v14.16.1/bin/pnpm'
+alias pn='pnpm'
+alias pi='pnpm install'
+alias pui='pnpm up -i --latest'
+alias pa='pnpm add'
+
 # Tmux
 alias it='tmuxinator start'
 alias t='tmux'
@@ -137,9 +144,10 @@ alias push='git push'
 alias cm='git commit'
 
 # Program aliases
-alias nvim='nvm use 12.13.1 && nvim'
+alias nvim='nvm use 14.17.3 && nvim'
 alias r='ranger'
 alias lg='lazygit'
+alias py=python3
 
 # Some useful stuff
 alias secret="node ~/dotfiles/tools/secret.js"
@@ -191,3 +199,6 @@ prompt_dir() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/mongodb-community@4.0/bin:$PATH"
+export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+
+[ -s "/Users/marcelmeyer/.jabba/jabba.sh" ] && source "/Users/marcelmeyer/.jabba/jabba.sh"
