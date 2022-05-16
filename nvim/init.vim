@@ -5,11 +5,13 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
-Plug 'francoiscabrol/ranger.vim'
+"Plug 'francoiscabrol/ranger.vim'
+Plug 'kevinhwang91/rnvimr'
 Plug 'rbgrouleff/bclose.vim' " Dependency of ranger.vim
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'tommcdo/vim-fugitive-blame-ext'
 Plug 'mhinz/vim-signify'
 
 " TypeScript
@@ -26,6 +28,7 @@ Plug 'tpope/vim-surround'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'sheerun/vim-polyglot'
 Plug 'pantharshit00/vim-prisma'
+Plug 'jparise/vim-graphql'
 
 " Color themes
 Plug 'gruvbox-community/gruvbox'
@@ -92,6 +95,7 @@ set listchars=tab:»-,trail:·,eol:¬
 autocmd BufWritePre * :%s/\s\+$//e
 
 
+
 """" Global keybindings
 " Redo with U instead of Ctrl+R
 noremap U <C-R>
@@ -109,6 +113,12 @@ nnoremap <S-Tab> :bprevious<cr>
 map <Leader>fn :let @+ = expand("%:t") \| echo 'cb> ' . @+<CR>
 map <Leader>fp :let @+ = expand("%:p") \| echo 'cb> ' . @+<CR>
 
+" Do not yank the visual selection when pasting
+xnoremap <silent> p p:if v:register == '"'<Bar>let @@=@0<Bar>endif<cr>
+
+" Move the selections up and down with corresponding indentation
+xnoremap J :m '>+1<CR>gv=gv
+xnoremap K :m '<-2<CR>gv=gv
 
 
 """" FZF config
@@ -153,8 +163,26 @@ command! Tofix :Grepper -noprompt -tool git -grepprg git grep -nIi '\(TODO\|FIXM
 
 
 """" Ranger
-let g:ranger_map_keys = 0
-nnoremap <leader>r :Ranger<cr>
+" let g:ranger_map_keys = 0
+" nnoremap <leader>r :Ranger<cr>
+nnoremap <leader>r :RnvimrToggle<CR>
+
+" Make Ranger replace Netrw and be the file explorer
+let g:rnvimr_enable_ex = 1
+
+" Make Ranger to be hidden after picking a file
+let g:rnvimr_enable_picker = 1
+
+" Make Neovim wipe the buffers corresponding to the files deleted by Ranger
+let g:rnvimr_enable_bw = 1
+
+" Link CursorLine into RnvimrNormal highlight in the Floating window
+highlight link RnvimrNormal CursorLine
+
+" Map Rnvimr action
+let g:rnvimr_action = {
+            \ '<C-v>': 'NvimEdit vsplit'
+            \ }
 
 
 
@@ -184,7 +212,7 @@ let g:startify_use_env = 1
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " Remap for rename current word
-omap <leader>rn <Plug>(coc-rename)
+nmap <leader>n <Plug>(coc-rename)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -248,4 +276,5 @@ let g:coc_global_extensions = [
   \ 'coc-stylelint',
   \ 'coc-css',
   \ 'coc-prisma',
+  \ 'coc-graphql',
   \ ]

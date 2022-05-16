@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/Users/marcel/Library/Python/3.8/bin:/Users/marcel/.oly/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/marcelmeyer/.oh-my-zsh"
+export ZSH="/Users/marcel/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-DEFAULT_USER="marcelmeyer@mac-meyerm"
+DEFAULT_USER="marcel@marcel-mac"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -95,6 +95,7 @@ export LANG=en_US.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
+  export VISUAL='nvim'
   export EDITOR='nvim'
 fi
 
@@ -122,7 +123,7 @@ alias yui='yarn upgrade-interactive'
 alias ya='yarn add'
 
 # PNPM aliases
-alias pnpm='/Users/marcelmeyer/.nvm/versions/node/v14.16.1/bin/pnpm'
+# alias pnpm='/Users/marcel/.nvm/versions/node/v14.16.1/bin/pnpm'
 alias pn='pnpm'
 alias pi='pnpm install'
 alias pui='pnpm up -i --latest'
@@ -144,7 +145,7 @@ alias push='git push'
 alias cm='git commit'
 
 # Program aliases
-alias nvim='nvm use 14.17.3 && nvim'
+alias nvim='nvm use 16.13.0 && nvim'
 alias r='ranger'
 alias lg='lazygit'
 alias py=python3
@@ -154,8 +155,9 @@ alias secret="node ~/dotfiles/tools/secret.js"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+  [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
+  [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
 
 ## Autodetext .nvmrc files
 autoload -U add-zsh-hook
@@ -186,19 +188,6 @@ prompt_dir() {
   prompt_segment blue $CURRENT_FG '%3~'
 }
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/marcelmeyer/Develop/toolchen/serverless-preview-service/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/marcelmeyer/Develop/toolchen/serverless-preview-service/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/marcelmeyer/Develop/toolchen/serverless-preview-service/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/marcelmeyer/Develop/toolchen/serverless-preview-service/node_modules/tabtab/.completions/sls.zsh
-
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/marcelmeyer/Develop/mercateo/unite-graphql/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/marcelmeyer/Develop/mercateo/unite-graphql/node_modules/tabtab/.completions/slss.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/usr/local/opt/mongodb-community@4.0/bin:$PATH"
-export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
-
-[ -s "/Users/marcelmeyer/.jabba/jabba.sh" ] && source "/Users/marcelmeyer/.jabba/jabba.sh"
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true

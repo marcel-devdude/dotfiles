@@ -1,7 +1,7 @@
-# /Users/marcelmeyer/.config/tmuxinator/blog.yml
+# /Users/marcelmeyer/.config/tmuxinator/xing-network.yml
 
-name: veda
-root: ~/Develop/veda
+name: xing-network
+root: ~/Develop/xing/network-frontend
 
 # Optional tmux socket
 # socket_name: foo
@@ -40,25 +40,12 @@ root: ~/Develop/veda
 # attach: false
 
 windows:
-  - frontend:
+  - app:
       layout:  4922,362x79,0,0{181x79,0,0,0,180x79,182,0[180x39,182,0,1,180x39,182,40,2]}
-      root: ~/Develop/veda/frontend
       panes:
         - clear
         - clear
         - clear
-  - nvim:
-      root: ~/Develop/veda/frontend
-      panes:
-        - nvim
-  - backend:
-      layout:  4922,362x79,0,0{181x79,0,0,0,180x79,182,0[180x39,182,0,1,180x39,182,40,2]}
-      root: ~/Develop/veda/backend-services
-      panes:
-        - clear
-        - clear
-        - clear
-  - nvim:
-      root: ~/Develop/veda/backend-services
+  - nvim-app:
       panes:
         - nvim

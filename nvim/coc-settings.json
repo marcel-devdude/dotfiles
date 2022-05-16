@@ -2,9 +2,8 @@
   "suggest.noselect": false,
   "eslint.autoFixOnSave": true,
   "diagnostic.errorSign": "✗",
-  /* "diagnostic.signOffset": 9999999, */
+  "typescript.autoClosingTags": false,
   "typescript.updateImportsOnFileMove.enable": true,
-  "prisma.prismaFmtBinPath": "",
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "typescript",

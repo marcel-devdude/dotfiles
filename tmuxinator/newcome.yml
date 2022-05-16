@@ -1,7 +1,7 @@
 # /Users/marcelmeyer/.config/tmuxinator/newcome.yml
 
 name: newcome
-root: ~/Develop/devdude/newcome
+root: ~/Develop/newcome
 
 # Optional tmux socket
 # socket_name: foo
@@ -42,12 +42,12 @@ root: ~/Develop/devdude/newcome
 windows:
   - app:
       layout:  4922,362x79,0,0{181x79,0,0,0,180x79,182,0[180x39,182,0,1,180x39,182,40,2]}
-      root: ~/Develop/devdude/newcome/app
+      root: ~/Develop/newcome/app
       panes:
         - clear
         - clear
         - clear
   - nvim-app:
-      root: ~/Develop/devdude/newcome/app
+      root: ~/Develop/newcome/app
       panes:
         - nvim

@@ -1,7 +1,7 @@
 # /Users/marcelmeyer/.config/tmuxinator/blog.yml
 
-name: veda
-root: ~/Develop/veda
+name: dc-website
+root: ~/Develop/devchimps
 
 # Optional tmux socket
 # socket_name: foo
@@ -42,23 +42,11 @@ root: ~/Develop/veda
 windows:
   - frontend:
       layout:  4922,362x79,0,0{181x79,0,0,0,180x79,182,0[180x39,182,0,1,180x39,182,40,2]}
-      root: ~/Develop/veda/frontend
+      root: ~/Develop/devchimps/devchimps-website
       panes:
-        - clear
         - clear
         - clear
   - nvim:
-      root: ~/Develop/veda/frontend
-      panes:
-        - nvim
-  - backend:
-      layout:  4922,362x79,0,0{181x79,0,0,0,180x79,182,0[180x39,182,0,1,180x39,182,40,2]}
-      root: ~/Develop/veda/backend-services
-      panes:
-        - clear
-        - clear
-        - clear
-  - nvim:
-      root: ~/Develop/veda/backend-services
+      root: ~/Develop/devchimps/devchimps-website
       panes:
         - nvim
